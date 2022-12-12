@@ -48,8 +48,8 @@ def __init__():  # On initialisation
 
     ### Insert all other ENV variables below
     env_get("VERBOSE", default=3, type=int)
-    env_get("FLASK_PORT", default=8080, type=int)
-    env_get("FLASK_IP", default=get_ip(), type=str)
+    env_get("FLASK_PORT", default=5000, type=int)
+    env_get("FLASK_IP", default="0.0.0.0", type=str)
 
     mappings()
 

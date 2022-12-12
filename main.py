@@ -2,9 +2,12 @@ import os
 import time
 import signal
 import sys
+from tracemalloc import start
+from flask import Flask, request
 
 from sample.input_args import parse_arguments
 from config.settings import config, logger
+from server import start_server
 
 
 def exit_gracefully(signum, frame):
@@ -31,6 +34,4 @@ if __name__ == "__main__":
     inputArgs = parse_arguments()
     logger.debug(f"Logging level is at {inputArgs.verbose}")
     logger.info(f"Flask server on {config['FLASK_IP']}:{config['FLASK_PORT']}")
-    while True:
-        time.sleep(1)
-        print("a")
+    start_server()
