@@ -3,7 +3,7 @@ import json
 from flask import Flask, request
 from config.settings import logger
 from custom_types.type_def import RaiseAPIException, api_response, check_json
-from paths import status_route, camera_route
+from routes import status_route, camera_route
 from config.settings import config
 
 ### Logging built in the Flask server (does not log to file)
